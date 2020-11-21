@@ -36,9 +36,9 @@
 export default {
   async asyncData({ store, $axios, query }) {
     try {
-      const { apiUrl, token } = store.state;
+      const { token } = store.state;
       const feed = (await $axios.$get(`/method/newsfeed.search/?q=${query.q}&extended=1&v=5.52&access_token=${token}`)).response.items;
-      store.commit('setNews', feed);
+      store.commit('news/setNews', feed);
       
       return {
         feed

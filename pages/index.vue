@@ -45,10 +45,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  .search-input {
-    display: flex;
-    align-items: center;
-  }
-</style>

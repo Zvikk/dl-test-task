@@ -1,0 +1,18 @@
+.news {
+  &__info-property {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info-property-name {
+    margin-right: 8px;
+  }
+
+  &__divider {
+    margin: 16px 0;
+  }
+
+  &__content {
+    margin-bottom: 16px;
+  }
+}

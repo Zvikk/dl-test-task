@@ -1,5 +1,4 @@
 export const state = () => ({
-  token: 'e2ddc95be2ddc95be2ddc95b9fe2a8c4ccee2dde2ddc95bbd650730980fc2014e13f23c',
   news: null
 })
 

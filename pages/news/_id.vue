@@ -32,9 +32,7 @@
   
             <v-divider class="news__divider"></v-divider>
   
-            <div>{{ news.text }}</div>
-  
-            <v-divider class="news__divider"></v-divider>
+            <div class="news__content">{{ news.text }}</div>
   
             <v-row justify="center" align="center" v-if="thumbsImages">
               <v-col cols="4">
@@ -99,7 +97,9 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["getNewsById"]),
+    ...mapActions({
+      getNewsById: "news/getNewsById"
+    }),
 
     getDate(date) {
       const newsDate = new Date(date * 1000).toLocaleDateString();
@@ -114,23 +114,9 @@ export default {
   },
   async created() {
     this.news = await this.getNewsById(this.$route.params.id);
-  },
+
+    console.log('this.news', this.news);
+    console.log('this.$computed', this)
+  }
 };
 </script>
-
-<style scoped lang="scss">
-.news {
-  &__info-property {
-    display: flex;
-    align-items: center;
-  }
-
-  &__info-property-name {
-    margin-right: 8px;
-  }
-
-  &__divider {
-    margin: 16px 0;
-  }
-}
-</style>
