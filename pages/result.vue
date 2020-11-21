@@ -1,10 +1,16 @@
 <template>
   <v-container>
-    <v-row v-if="!feed">
-      <v-col>No feed</v-col>
+    <v-row v-if="!feed || !feed.length">
+      <empty-state></empty-state>
     </v-row>
 
     <template v-else>
+      <v-row>
+        <v-col>
+          <v-btn color="primary" to="/">Вернуться на главную</v-btn>
+        </v-col>
+      </v-row>
+
       <v-row>
         <v-col>
           <h1>
@@ -31,11 +37,11 @@ export default {
   async asyncData({ store, $axios, query }) {
     try {
       const { apiUrl, token } = store.state;
-      const feed = (await $axios.$get(`/?q=${query.q}&extended=1&v=5.52&access_token=${token}`)).response.items;
+      const feed = (await $axios.$get(`/method/newsfeed.search/?q=${query.q}&extended=1&v=5.52&access_token=${token}`)).response.items;
       store.commit('setNews', feed);
       
       return {
-        feed,
+        feed
       };
     } catch (error) {
       return {
