@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters>
+  <v-row no-gutters v-cloack>
     <v-col no-gutters>
       <v-form @submit.prevent="submit" v-model="valid" ref="form">
         <v-container>

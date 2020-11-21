@@ -29,6 +29,6 @@ export default {
 
   .app-card {
     box-shadow: 0px 0px 22px 5px rgba(0,0,0,0.38);
-    background-color: #ffffff;
+    background-color: #f5f5f5;
   }
 </style>

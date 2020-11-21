@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="result">
     <v-row v-if="!feed || !feed.length">
       <empty-state></empty-state>
     </v-row>
@@ -23,9 +23,11 @@
 
       <v-row v-for="(item, i) in feed" :key="i">
         <v-col>
-          <v-card @click="navigateToNews(item)">
-            <v-card-text>{{ item.text }}</v-card-text>
-          </v-card>
+          <v-hover v-slot="{ hover }">
+            <v-card @click="navigateToNews(item)" class="result__item" :elevation="hover ? 12 : 2">
+              <v-card-text>{{ item.text }}</v-card-text>
+            </v-card>
+          </v-hover>
         </v-col>
       </v-row>
     </template>
