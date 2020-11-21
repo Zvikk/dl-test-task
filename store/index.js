@@ -1,6 +1,6 @@
 export const state = () => ({
   apiUrl: 'https://api.vk.com/method/newsfeed.search',
-  token: '400da894a5970bce8bae9cac81817c305496b1e32a8975317cff63c01b892559654b7a4064d0d47e8a837',
+  token: 'e2ddc95be2ddc95be2ddc95b9fe2a8c4ccee2dde2ddc95bbd650730980fc2014e13f23c',
   news: null
 })
 
